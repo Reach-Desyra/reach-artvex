@@ -1,0 +1,209 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 332 65% 45%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 332 65% 95%;
+    --accent-foreground: 332 65% 45%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 332 65% 45%;
+
+    /* REACH CAD specific design tokens */
+    --reach-purple: 260 70% 50%;
+    --reach-magenta: 332 65% 45%;
+    --reach-gradient: linear-gradient(135deg, hsl(var(--reach-purple)), hsl(var(--reach-magenta)));
+    --reach-gradient-subtle: linear-gradient(135deg, hsl(var(--reach-purple) / 0.1), hsl(var(--reach-magenta) / 0.1));
+    
+    /* Professional shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--reach-magenta) / 0.2);
+    --shadow-card: 0 4px 6px -1px hsl(240 5.9% 10% / 0.1);
+    
+    /* Smooth transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Mid light green (between green-25 and green-50) */
+.bg-green-35 {
+  background-color: #D4F0C8;
+}
+
+.text-green-35 {
+  color: #D4F0C8;
+}
+
+/* PNG icon filter – soft light green */
+.icon-green-35 {
+  filter: brightness(0) saturate(100%)
+    invert(90%) sepia(28%) saturate(320%)
+    hue-rotate(70deg) brightness(102%) contrast(95%);
+}
+
+
+/* Extra light green (ultra soft) */
+.bg-green-25 {
+  background-color: #EAF7E6;
+}
+
+.text-green-25 {
+  color: #EAF7E6;
+}
+
+/* PNG icon filter – ultra light green */
+.icon-green-25 {
+  filter: brightness(0) saturate(100%)
+    invert(93%) sepia(20%) saturate(180%)
+    hue-rotate(70deg) brightness(105%) contrast(95%);
+}
+
+
+
+/* Background colors */
+.bg-green-50  { background-color: #A9DCA0; }
+.bg-green-100 { background-color: #8FCF7E; }
+.bg-green-300 { background-color: #5FAF55; }
+.bg-green-600 { background-color: #2F6B1F; }
+.bg-green-800 { background-color: #1F3D1B; }
+.bg-green-900 { background-color: #1E2A1F; }
+.bg-a03359 { background-color: #A03359; }
+
+/* Text colors */
+.text-green-50  { color: #A9DCA0; }
+.text-green-100 { color: #8FCF7E; }
+.text-green-300 { color: #5FAF55; }
+.text-green-600 { color: #2F6B1F; }
+.text-green-800 { color: #1F3D1B; }
+.text-green-900 { color: #1E2A1F; }
+.text-a03359 { color: #A03359; }
+
+
+/* PNG Icon filters (green tones) */
+
+/* Light green */
+.icon-green-100 {
+  filter: brightness(0) saturate(100%)
+    invert(76%) sepia(28%) saturate(450%)
+    hue-rotate(70deg) brightness(100%) contrast(90%);
+}
+
+/* Medium green */
+.icon-green-300 {
+  filter: brightness(0) saturate(100%)
+    invert(52%) sepia(35%) saturate(820%)
+    hue-rotate(85deg) brightness(95%) contrast(95%);
+}
+
+/* Dark green */
+.icon-green-600 {
+  filter: brightness(0) saturate(100%)
+    invert(28%) sepia(55%) saturate(900%)
+    hue-rotate(90deg) brightness(90%) contrast(95%);
+}
+
+/* Deep dark green */
+.icon-green-800 {
+  filter: brightness(0) saturate(100%)
+    invert(16%) sepia(40%) saturate(600%)
+    hue-rotate(95deg) brightness(85%) contrast(100%);
+}
+
+/* #A03359 */
+.icon-a03359 {
+  filter: brightness(0) saturate(100%)
+    invert(24%) sepia(86%) saturate(2894%)
+    hue-rotate(323deg) brightness(92%) contrast(92%);
+}
